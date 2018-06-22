@@ -1,0 +1,13 @@
+a {
+  background: transparent;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+
+a:hover { 
+    text-decoration: underline;
+}
+
+a.down {
+  background: #ccff00;
+}
