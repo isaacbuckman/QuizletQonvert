@@ -1,15 +1,24 @@
+@font-face {
+  font-family: 'hurme-geo-sans';
+  src: url('hurmegeosans.woff2') format('woff2');
+}
+
+*{
+  font-family: 'hurme-geo-sans';
+}
+
 a {
   background: transparent;
   cursor: pointer;
   padding: 2px 5px;
 }
 
-a:hover { 
+a#button:hover { 
     text-decoration: underline;
 }
 
 a.down {
-  background: #ccff00;
+  background: #fdff32;
 }
 
 .hide{

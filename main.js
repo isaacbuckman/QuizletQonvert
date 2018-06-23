@@ -34,7 +34,7 @@ function processResults() {
 		for (var x = 0; x < words.length; x++) {
 			var word = words[x];
 			if (word.className === "down") {
-				if (term != "") {
+				if (term !== "") {
 					term += ", " + word.innerText;
 				} else {
 					term += word.innerText;
@@ -44,7 +44,9 @@ function processResults() {
 				def += word.innerText + " ";
 			}
 		}
-		innerHTML += term + "&nbsp&nbsp&nbsp&nbsp" + def + "<br/>";
+		if (term !== "") {
+			innerHTML += term + "&nbsp&nbsp&nbsp&nbsp" + def + "<br/>";
+		}
 	}
 	innerHTML = innerHTML.substring(0, innerHTML.lastIndexOf("<br/>"));
 	document.getElementById("output").innerHTML = innerHTML;
