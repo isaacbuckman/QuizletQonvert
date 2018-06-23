@@ -11,3 +11,7 @@ a:hover {
 a.down {
   background: #ccff00;
 }
+
+.hide{
+  display:none;  
+}

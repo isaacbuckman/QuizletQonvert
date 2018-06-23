@@ -1,21 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!-- <link rel="icon" href="../../../../favicon.ico"> -->
+		<title>QuizletQonvert</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<body>	
-		<textarea rows="4" cols="50" id="input"></textarea>
-		<button onClick="processInput(document.getElementById('input').value)">Submit</button>
-		
-		<table id="myTable">
-	<!-- 	  <tr>
-			<td>Row1 cell1</td>
-			<td>Row1 cell2</td>
-		  </tr> -->
-		</table>
-		<p id="output"></p>
-
+	<body>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item" id="section-one">
+				<div class="container">
+					<div class="form-group">
+						<label for="input">Input</label>
+						<textarea type="text" class="form-control" id="input" placeholder="Enter paragraph here"  onKeyUp="inputChanged()"></textarea>
+					</div>
+					<a href="#section-two">
+						<button class="btn btn-primary" onClick="processInput(document.getElementById('input').value)">Submit</button>
+					</a>
+				</div>
+			</li>
+			<li class="list-group-item hide" id="section-two">
+				<div class="container">
+					<div class="form-group">
+						<table class="table-responsive" id="myTable">
+							<!-- <tr>
+								<td>Row1 cell1</td>
+								<td>Row1 cell2</td>
+							</tr> -->
+						</table>
+					</div>
+					<a href="#section-three">
+						<button class="btn btn-primary" onClick="processResults()">Process</button>
+					</a>
+				</div>
+			</li>
+			<li class="list-group-item hide" id="section-three">
+				<div class="container">
+					<p id="output"></p>
+				</div>
+			</li>
+		</ul>
 		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
