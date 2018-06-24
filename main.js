@@ -1,11 +1,16 @@
+//for andrew
+var textinput = document.getElementById("input");
+textinput.value = "Hey Andrew! We met at the MIT Blueprint Hackathon and I recommended a \"fill in the blank\" feature. I hope you enjoy!\n\nThe idea here is that a student could copy and paste a paragraph from their textbook or powerpoint slides. They can then select which words they want to become the blank in their sentences. Below is one of the slides from a history presentation that inspired me to create this.\n\n• Richard Arkwright credited for growth of factories\n\n• Created 1st true factory\n\n• Men, Women and Children employed\n\n• Harsh conditions – fined for whistling or looking out\nthe window, no safety guards, 16 hour work days\n\n• 16 hour work days for children, as young as 3 were\nput to work; expected children to receive a basic\namount of education";
+
 var table = document.getElementById("myTable");
 var sentences = [];
 
 	
 function processInput(input) {
-	this.input = input;
+	input = input.replace(/(\r\n\t|\n|\r\t)/gm," ");
 	$("tr").remove();
 	sentences = input.split(".").filter(function(el) {return el.length != 0});
+	sentences = input.match(/•[^•]+|[^\.!\?•]+[\.!\?]+/g);
 	for (var i = 0; i < sentences.length; i++) {
 		var row = table.insertRow(-1);
 		var cell = row.insertCell(0);
@@ -66,4 +71,37 @@ $(document).ready(function() {
 	$(this).toggleClass("down");
 	 $("#section-three").addClass("hide");
   });
+});
+
+// Tooltip
+
+$('button').tooltip({
+  trigger: 'click',
+  placement: 'bottom'
+});
+
+function setTooltip(btn, message) {
+  $(btn).tooltip('hide')
+    .attr('data-original-title', message)
+    .tooltip('show');
+}
+
+function hideTooltip(btn) {
+  setTimeout(function() {
+    $(btn).tooltip('hide');
+  }, 1000);
+}
+
+// Clipboard
+
+var clipboard = new ClipboardJS('button');
+
+clipboard.on('success', function(e) {
+  setTooltip(e.trigger, 'Copied!');
+  hideTooltip(e.trigger);
+});
+
+clipboard.on('error', function(e) {
+  setTooltip(e.trigger, 'Failed!');
+  hideTooltip(e.trigger);
 });

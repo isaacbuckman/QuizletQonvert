@@ -17,14 +17,12 @@
 		<nav class="navbar navbar-light bg-light">
 		  <span class="navbar-brand mb-0 h1">QuizletQonvert</span>
 		</nav>
-
-
+		
 		<ul class="list-group list-group-flush">
 			<li class="list-group-item" id="section-one">
-				<div class="container">
+				<div class="container">			
 					<div class="form-group">
-						<label for="input">Input</label>
-						<textarea type="text" class="form-control" id="input" placeholder="Enter paragraph here"  onKeyUp="inputChanged()"></textarea>
+						<textarea type="text" class="form-control" id="input" rows="6" placeholder="Enter your paragraph"  onKeyUp="inputChanged()"></textarea>
 					</div>
 					<a href="#section-two">
 						<button class="btn btn-primary" onClick="processInput(document.getElementById('input').value)">Submit</button>
@@ -33,6 +31,7 @@
 			</li>
 			<li class="list-group-item hide" id="section-two">
 				<div class="container">
+					<h5>Select which words to become blanks:</h5>
 					<div class="form-group">
 						<table class="table-responsive" id="myTable">
 							<!-- <tr>
@@ -48,10 +47,23 @@
 			</li>
 			<li class="list-group-item hide" id="section-three">
 				<div class="container">
-					<p id="output"></p>
+					<div class="row">
+						<h5>Copy-paste the following text into the Quizlet "import" feature using the default delineations:</h5>
+					</div>
+					<div class="row">
+						<div class="col-11">
+							<p id="output"></p>
+						</div>
+						<div class="col-1">
+							<button class="clipboard btn" type="button" data-clipboard-target="#output">
+								<img class="clippy" src="clippy.svg" width="13" alt="Copy to clipboard">
+							</button>
+						</div>
+					</div>
 				</div>
 			</li>
 		</ul>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
 		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
