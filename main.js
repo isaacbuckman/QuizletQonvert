@@ -1,6 +1,6 @@
 //for andrew
-var textinput = document.getElementById("input");
-textinput.value = "The idea here is that a student could copy and paste a paragraph from their textbook or powerpoint slides. They can then select which words they want to become the blank in their sentences. Below is one of the slides from a history presentation that inspired me to create this.\n\n• Richard Arkwright credited for growth of factories\n\n• Created 1st true factory\n\n• Men, Women and Children employed\n\n• Harsh conditions – fined for whistling or looking out\nthe window, no safety guards, 16 hour work days\n\n• 16 hour work days for children, as young as 3 were\nput to work; expected children to receive a basic\namount of education";
+//var textinput = document.getElementById("input");
+//textinput.value = "The idea here is that a student could copy and paste a paragraph from their textbook or powerpoint slides. They can then select which words they want to become the blank in their sentences. Below is one of the slides from a history presentation that inspired me to create this.\n\n• Richard Arkwright credited for growth of factories\n\n• Created 1st true factory\n\n• Men, Women and Children employed\n\n• Harsh conditions – fined for whistling or looking out\nthe window, no safety guards, 16 hour work days\n\n• 16 hour work days for children, as young as 3 were\nput to work; expected children to receive a basic\namount of education";
 
 var table = document.getElementById("myTable");
 var sentences = [];
